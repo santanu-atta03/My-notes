@@ -1,9 +1,9 @@
 import './App.css'
-import Navbar from './componenets/Navbar.jsx'
+import Navbar from './components/Navbar.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './componenets/Home.jsx'
-import Allnotes from './componenets/Allnotes.jsx'
-import ViewNote from './componenets/ViewNote.jsx'
+import Home from './components/Home.jsx'
+import Allnotes from './components/Allnotes.jsx'
+import ViewNote from './components/ViewNote.jsx'
 
 const router = createBrowserRouter(
   [
