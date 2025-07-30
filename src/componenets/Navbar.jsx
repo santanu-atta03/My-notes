@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { NavbarData } from '../data/Navbar.js'
+import { NavbarData } from '../Data/Navbar'
+
 const Navbar = () => {
   return (
     <div className="flex flex-row justify-around p-4 gap-5">
