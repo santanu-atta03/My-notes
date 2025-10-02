@@ -1,14 +1,13 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import store from './store.js'
-import { Provider } from 'react-redux'
-import { Toaster } from 'react-hot-toast';
+
+// Import Google Fonts
+const link = document.createElement('link');
+link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap';
+link.rel = 'stylesheet';
+document.head.appendChild(link);
 
 createRoot(document.getElementById('root')).render(
-  
-  <Provider store={store}>
-    <App />
-    <Toaster />
-  </Provider>
+  <App />
 )
