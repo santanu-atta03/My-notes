@@ -58,13 +58,14 @@ const SkillsTimeline = ({ isDark }) => {
 
     if (!section || !timeline) return;
 
-    // Pin the section
-    ScrollTrigger.create({
+    // Pin the section during its own height, avoid over-pin and layout conflicts
+    const pinTrigger = ScrollTrigger.create({
       trigger: section,
       start: "top top",
-      end: "bottom bottom",
+      end: () => `+=${section.offsetHeight}`,
       pin: true,
-      pinSpacing: true
+      pinSpacing: true,
+      invalidateOnRefresh: true
     });
 
     // Animate timeline items
@@ -88,7 +89,8 @@ const SkillsTimeline = ({ isDark }) => {
               trigger: item,
               start: "top 80%",
               end: "bottom 20%",
-              toggleActions: "play reverse play reverse"
+              toggleActions: "play reverse play reverse",
+              fastScrollEnd: true
             }
           }
         );
@@ -106,7 +108,8 @@ const SkillsTimeline = ({ isDark }) => {
             scrollTrigger: {
               trigger: item,
               start: "top 70%",
-              toggleActions: "play reverse play reverse"
+              toggleActions: "play reverse play reverse",
+              fastScrollEnd: true
             }
           }
         );
@@ -118,12 +121,13 @@ const SkillsTimeline = ({ isDark }) => {
       { scaleY: 0 },
       {
         scaleY: 1,
-        duration: 2,
-        ease: "power2.out",
+        ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "top center",
-          toggleActions: "play reverse play reverse"
+          start: "top top",
+          end: () => `+=${section.offsetHeight}`,
+          scrub: true,
+          invalidateOnRefresh: true
         }
       }
     );
