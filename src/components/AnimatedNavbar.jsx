@@ -94,7 +94,7 @@ const AnimatedNavbar = ({ toggleTheme, isDark }) => {
               onClick={() => scrollToSection('hero')}
               data-cursor="pointer"
             >
-              Portfolio
+              Santanu.dev
             </div>
 
             {/* Desktop Navigation */}

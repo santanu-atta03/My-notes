@@ -21,6 +21,7 @@ const ContactSection = ({ isDark }) => {
     const particles = particlesRef.current;
 
     if (!section || !form || !particles) return;
+    
 
     // Animate form elements
     const formElements = form.querySelectorAll('.form-element');
@@ -122,7 +123,7 @@ const ContactSection = ({ isDark }) => {
     <section 
       id="contact"
       ref={sectionRef}
-      className={`min-h-screen py-20 ${isDark ? 'bg-gray-800' : 'bg-white'} relative overflow-hidden`}
+      className={`min-h-screen py-20 ${isDark ? 'bg-red-800' : 'bg-white'} relative overflow-hidden`}
     >
       {/* Interactive Background */}
       <div 

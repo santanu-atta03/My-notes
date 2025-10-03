@@ -103,6 +103,92 @@ function App() {
     };
   }, [isLoading]);
 
+
+  // Section transition effects
+// Section transition effects
+// useEffect(() => {
+//   if (!isLoading) {
+//     // Wait for all images and content to load
+//     const timer = setTimeout(() => {
+//       const sections = document.querySelectorAll('section');
+      
+//       // Force initial visibility
+//       sections.forEach(section => {
+//         section.style.opacity = '1';
+//         section.style.transform = 'scale(1)';
+//       });
+      
+//       // Refresh ScrollTrigger to recalculate positions
+//       ScrollTrigger.refresh();
+      
+//       sections.forEach((section) => {
+//         ScrollTrigger.create({
+//           trigger: section,
+//           start: "top 60%",
+//           end: "bottom 40%",
+//           onEnter: () => {
+//             gsap.to(section, {
+//               scale: 1,
+//               opacity: 1,
+//               duration: 0.6,
+//               ease: "power2.out"
+//             });
+//           },
+//           onLeave: () => {
+//             gsap.to(section, {
+//               scale: 0.98,
+//               opacity: 0.9,
+//               duration: 0.4,
+//               ease: "power2.out"
+//             });
+//           },
+//           onEnterBack: () => {
+//             gsap.to(section, {
+//               scale: 1,
+//               opacity: 1,
+//               duration: 0.6,
+//               ease: "power2.out"
+//             });
+//           },
+//           onLeaveBack: () => {
+//             gsap.to(section, {
+//               scale: 0.98,
+//               opacity: 0.9,
+//               duration: 0.4,
+//               ease: "power2.out"
+//             });
+//           }
+//         });
+//       });
+//     }, 100);
+
+//     return () => {
+//       clearTimeout(timer);
+//       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+//     };
+//   }
+// }, [isLoading]);
+
+// // Refresh ScrollTrigger on window load
+// useEffect(() => {
+//   const handleLoad = () => {
+//     ScrollTrigger.refresh();
+//   };
+
+//   window.addEventListener('load', handleLoad);
+  
+//   // Also refresh after a delay as fallback
+//   const refreshTimer = setTimeout(() => {
+//     ScrollTrigger.refresh();
+//   }, 500);
+
+//   return () => {
+//     window.removeEventListener('load', handleLoad);
+//     clearTimeout(refreshTimer);
+//   };
+// }, []);
+
+
   return (
     <div className={`min-h-screen transition-colors duration-500 ${
       isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
@@ -151,7 +237,7 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div>
               <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                Portfolio
+                Santanu
               </h3>
               <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                 Crafting digital experiences with passion
