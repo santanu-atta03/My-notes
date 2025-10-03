@@ -25,13 +25,22 @@ const AboutSection = ({ isDark }) => {
     if (!section || !image || !content) return;
 
     // Pin the image while content scrolls
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top top",
-      end: "bottom bottom",
-      pin: image,
-      pinSpacing: false
-    });
+    // ScrollTrigger.create({
+    //   trigger: section,
+    //   start: "top top",
+    //   end: "bottom bottom",
+    //   pin: image,
+    //   pinSpacing: false
+    // });
+    // Pin the image while content scrolls
+ScrollTrigger.create({
+  trigger: section,
+  start: "top top",
+  end: "bottom bottom",
+  pin: image,
+  pinSpacing: false,
+  anticipatePin: 1
+});
 
     // Animate paragraphs in from the right
     paragraphRefs.current.forEach((paragraph, index) => {
@@ -163,7 +172,7 @@ const AboutSection = ({ isDark }) => {
                   className="space-y-6"
                 >
                   <p className={`text-lg md:text-xl leading-relaxed ${
-                    isDark ? 'text-gray-300' : 'text-gray-600'
+                    isDark ? 'text-green-300' : 'text-gray-600'
                   }`}>
                     {paragraph}
                   </p>

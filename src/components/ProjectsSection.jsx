@@ -58,6 +58,56 @@ const ProjectsSection = ({ isDark }) => {
     }
   ];
 
+//   useEffect(() => {
+//   const section = sectionRef.current;
+//   const container = containerRef.current;
+
+//   if (!section || !container) return;
+
+//   let ctx = gsap.context(() => {
+//     const getScrollAmount = () => {
+//       return -(container.scrollWidth - window.innerWidth);
+//     };
+
+//     const scrollTween = gsap.to(container, {
+//       x: getScrollAmount,
+//       ease: "none",
+//       scrollTrigger: {
+//         trigger: section,
+//         start: "top top",
+//         end: () => `+=${-getScrollAmount()}`,
+//         scrub: 1,
+//         pin: true,
+//         anticipatePin: 1,
+//         invalidateOnRefresh: true
+//       }
+//     });
+
+//     // Animate cards
+//     cardsRef.current.forEach((card) => {
+//       if (card) {
+//         gsap.fromTo(card,
+//           { scale: 0.85, opacity: 0.3 },
+//           {
+//             scale: 1,
+//             opacity: 1,
+//             ease: "none",
+//             scrollTrigger: {
+//               trigger: card,
+//               containerAnimation: scrollTween,
+//               start: "left 70%",
+//               end: "left 30%",
+//               scrub: true
+//             }
+//           }
+//         );
+//       }
+//     });
+//   }, section);
+
+//   return () => ctx.revert();
+// }, []);
+
   useEffect(() => {
     const section = sectionRef.current;
     const container = containerRef.current;
@@ -142,8 +192,8 @@ const ProjectsSection = ({ isDark }) => {
         <div className="h-full flex items-center">
           <div 
             ref={containerRef}
-            className="flex space-x-8 px-8"
-            style={{ width: `${projects.length * 400 + 200}px` }}
+            className="flex space-x-8 px-8 w-max"
+            // style={{ width: `${projects.length * 400 + 200}px` }}
           >
             {/* Section Title */}
             <div className="flex-shrink-0 w-96 flex flex-col justify-center">

@@ -141,7 +141,7 @@ const SkillsTimeline = ({ isDark }) => {
     <section 
       id="skills"
       ref={sectionRef}
-      className={`min-h-screen py-20 ${isDark ? 'bg-gray-800' : 'bg-white'} relative overflow-hidden`}
+      className={`min-h-screen py-20 ${isDark ? 'bg-gray-100' : 'bg-white'} relative overflow-hidden`}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -189,7 +189,7 @@ const SkillsTimeline = ({ isDark }) => {
                 {/* Content */}
                 <div className={`w-5/12 ${exp.side === 'left' ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                   <div className={`p-6 rounded-2xl ${
-                    isDark ? 'bg-gray-700' : 'bg-gray-50'
+                    isDark ? 'bg-red-700' : 'bg-gray-50'
                   } shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105`}>
                     
                     {/* Year Badge */}
@@ -226,7 +226,7 @@ const SkillsTimeline = ({ isDark }) => {
                         <span 
                           key={skill}
                           className={`skill-tag px-3 py-1 rounded-full text-xs font-medium ${
-                            isDark ? 'bg-gray-600 text-gray-200' : 'bg-white text-gray-700'
+                            isDark ? 'bg-red-600 text-gray-200' : 'bg-white text-gray-700'
                           } shadow-sm`}
                         >
                           {skill}

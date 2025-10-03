@@ -90,7 +90,7 @@ const ImageGallery = ({ isDark }) => {
     const grid = gridRef.current;
 
     if (!section || !grid) return;
-
+    
     // Masonry layout animation
     imageRefs.current.forEach((image, index) => {
       if (image) {
@@ -189,7 +189,7 @@ const ImageGallery = ({ isDark }) => {
       <section 
         id="gallery"
         ref={sectionRef}
-        className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-gray-50'} relative overflow-hidden`}
+        className={`py-20 ${isDark ? 'bg-gray-100' : 'bg-gray-50'} relative overflow-hidden`}
       >
         {/* Background Elements */}
         <div className="absolute inset-0">
