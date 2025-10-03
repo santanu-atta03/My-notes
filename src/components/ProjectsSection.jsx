@@ -64,20 +64,22 @@ const ProjectsSection = ({ isDark }) => {
 
     if (!section || !container) return;
 
-    // Horizontal scroll setup
-    const scrollWidth = container.scrollWidth - container.clientWidth;
-    
-    gsap.to(container, {
-      x: -scrollWidth,
+    // Horizontal scroll setup with proper tween and containerAnimation
+    const horizontalTween = gsap.to(container, {
+      x: () => -(container.scrollWidth - section.clientWidth),
       ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: () => `+=${scrollWidth}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1
-      }
+      overwrite: true
+    });
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      end: () => `+=${container.scrollWidth - section.clientWidth}`,
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      animation: horizontalTween
     });
 
     // Animate cards on scroll
@@ -98,7 +100,7 @@ const ProjectsSection = ({ isDark }) => {
               start: "left 80%",
               end: "right 20%",
               toggleActions: "play reverse play reverse",
-              containerAnimation: gsap.getById("horizontal-scroll")
+              containerAnimation: horizontalTween
             }
           }
         );
