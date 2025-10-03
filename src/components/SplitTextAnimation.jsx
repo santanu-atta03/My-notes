@@ -83,7 +83,7 @@ const SplitTextAnimation = ({
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Removed global ScrollTrigger kill to prevent unrelated animations from being destroyed
     };
   }, [children, animation, stagger, trigger]);
 
@@ -188,7 +188,7 @@ export const SplitWordAnimation = ({
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Removed global ScrollTrigger kill to prevent unrelated animations from being destroyed
     };
   }, [children, animation, stagger]);
 
@@ -271,7 +271,7 @@ export const SplitLineAnimation = ({
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Removed global ScrollTrigger kill to prevent unrelated animations from being destroyed
     };
   }, [children, animation, stagger]);
 

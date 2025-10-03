@@ -75,7 +75,7 @@ const ContactSection = ({ isDark }) => {
     section.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Removed global ScrollTrigger kill to prevent unrelated animations from being destroyed
       section.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);

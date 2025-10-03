@@ -99,7 +99,7 @@ function App() {
     }
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Removed global ScrollTrigger kill to prevent unrelated animations from being destroyed
     };
   }, [isLoading]);
 

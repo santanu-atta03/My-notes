@@ -84,7 +84,7 @@ const AboutSection = ({ isDark }) => {
     image.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Removed global ScrollTrigger kill to prevent unrelated animations from being destroyed
       image.removeEventListener('mousemove', handleMouseMove);
       image.removeEventListener('mouseleave', handleMouseLeave);
     };
